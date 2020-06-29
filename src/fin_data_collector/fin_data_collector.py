@@ -27,7 +27,7 @@ class FinDataCollector:
             raise FinDataPeriodFetchException
         if end_date is None or end_date == '':
             print('end_date was not provided')
-            raise
+            raise FinDataPeriodFetchException
         if self.ticker_obj is None:
             raise FinDataFetchExcpetion('Fetch ticker object first. Call fetch_ticker_obj() method.')
 
