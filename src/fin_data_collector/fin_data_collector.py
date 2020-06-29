@@ -16,8 +16,8 @@ class FinDataCollector:
 
     def fetch_ticker_obj(self, option=''):
         if option not in self._options:
-            raise FinDataFetchExcpetion('Data cannot be fetched since {} is not available'.option)
-        print('feching data from {} ...'.option)
+            raise FinDataFetchExcpetion('Data cannot be fetched since {} is not available'.format(option))
+        print('feching data from {} ...'.format(option))
         ticker_obj = yf.Ticker(option)
         self.ticker_obj = ticker_obj
 

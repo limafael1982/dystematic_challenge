@@ -1,6 +1,7 @@
 # -*- coding: utf-8 -*-
 
 import unittest
+import yfinance as yf
 from .fin_data_collector import FinDataCollector
 from .fin_data_excpetion import FinDataFetchExcpetion
 
@@ -15,10 +16,12 @@ class TestFinDataCollector(unittest.TestCase):
 
     def test_ticker_obj_fetcher_should_not_work_with_incorrect_options(self):
         incorrect_option = 'a random string'
-        self.assertRaises(FinDataFetchExcpetion, self.fin_data_collect_obj.fetch_ticker_obj(incorrect_option))
+        self.assertRaises(FinDataFetchExcpetion, self.fin_data_collect_obj.fetch_ticker_obj, incorrect_option)
 
-   # def test_ticker_obj_fetcher_should_work_with_correct_options(self):
-   #     an_option = 'FB'
+    def test_ticker_obj_fetcher_should_work_with_correct_options(self):
+        an_option = 'FB'
+        self.fin_data_collect_obj.fetch_ticker_obj(an_option)
+        self.assertTrue(isinstance(self.fin_data_collect_obj.ticker_obj, yf.Ticker))
 
 
 
