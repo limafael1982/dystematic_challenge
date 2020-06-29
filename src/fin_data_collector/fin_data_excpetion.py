@@ -1,5 +1,6 @@
 # -*- coding: utf-8 -*-
 
+
 class FinDataException(Exception):
     """Base exception for FinDataCollector"""
     pass
@@ -7,3 +8,6 @@ class FinDataException(Exception):
 
 class FinDataFetchExcpetion(FinDataException):
     """Exception when data fetch does not work"""
+
+class FinDataPeriodFetchException(FinDataException):
+    print('please give the correct date parameters YYYY-MM-DD')
