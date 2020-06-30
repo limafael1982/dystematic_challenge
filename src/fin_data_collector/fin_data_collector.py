@@ -30,7 +30,13 @@ class FinDataCollector:
             raise FinDataPeriodFetchException
         if self.ticker_obj is None:
             raise FinDataFetchExcpetion('Fetch ticker object first. Call fetch_ticker_obj() method.')
-        data_ = self.ticker_obj
+        data_ = ''
+        try:
+            data_ = self.ticker_obj.history(start=start_date, end=end_date)
+        except Exception as e:
+            print('an error has occurred while trying to fetch ticker history')
+            data_ = 'error'
+        return data_
 
 
 

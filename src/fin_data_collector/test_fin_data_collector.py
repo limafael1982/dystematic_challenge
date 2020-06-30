@@ -51,6 +51,15 @@ class TestFinDataCollector(unittest.TestCase):
                           start_date,
                           end_date)
 
+    def test_should_give_correct_data_when_tick_has_correct_parameters(self):
+        start_date='2020-05-01'
+        end_date='2020-06-10'
+        self.fin_data_collect_obj.fetch_ticker_obj('FB')
+        data_ = self.fin_data_collect_obj.get_historical_data_given_ticker_obj(start_date,
+                                                                               end_date)
+        self.assertIsNotNone(data_)
+
+
 
 
 
