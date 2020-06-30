@@ -11,6 +11,9 @@ class TestFinDataCollector(unittest.TestCase):
     def setUp(self) -> None:
         self.fin_data_collect_obj = FinDataCollector()
 
+    def tearDown(self) -> None:
+        self.fin_data_collect_obj = None
+
     def test_should_have_correct_object(self):
         self.assertTrue(isinstance(self.fin_data_collect_obj, FinDataCollector))
 
@@ -47,6 +50,13 @@ class TestFinDataCollector(unittest.TestCase):
                           self.fin_data_collect_obj.fetch_historical_data_given_ticker_obj,
                           start_date,
                           end_date)
+
+
+
+
+
+
+
 
 
 
