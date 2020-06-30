@@ -21,7 +21,7 @@ class FinDataCollector:
         ticker_obj = yf.Ticker(option)
         self.ticker_obj = ticker_obj
 
-    def fetch_historical_data_given_ticker_obj(self, start_date, end_date):
+    def get_historical_data_given_ticker_obj(self, start_date, end_date):
         if start_date is None or start_date == '':
             print('start_date was not provided')
             raise FinDataPeriodFetchException
@@ -30,6 +30,8 @@ class FinDataCollector:
             raise FinDataPeriodFetchException
         if self.ticker_obj is None:
             raise FinDataFetchExcpetion('Fetch ticker object first. Call fetch_ticker_obj() method.')
+        data_ = self.ticker_obj
+
 
 
 

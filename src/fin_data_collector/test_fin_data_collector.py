@@ -33,13 +33,13 @@ class TestFinDataCollector(unittest.TestCase):
         end_date = '2020-06-06'
         self.fin_data_collect_obj.fetch_ticker_obj('FB')
         self.assertRaises(FinDataPeriodFetchException,
-                          self.fin_data_collect_obj.fetch_historical_data_given_ticker_obj,
+                          self.fin_data_collect_obj.get_historical_data_given_ticker_obj,
                           start_date,
                           end_date)
         start_date = '2020-06-10'
         end_date = ''
         self.assertRaises(FinDataPeriodFetchException,
-                          self.fin_data_collect_obj.fetch_historical_data_given_ticker_obj,
+                          self.fin_data_collect_obj.get_historical_data_given_ticker_obj,
                           start_date,
                           end_date)
 
@@ -47,7 +47,7 @@ class TestFinDataCollector(unittest.TestCase):
         start_date = '2020-06-10'
         end_date = '2020-06-20'
         self.assertRaises(FinDataFetchExcpetion,
-                          self.fin_data_collect_obj.fetch_historical_data_given_ticker_obj,
+                          self.fin_data_collect_obj.get_historical_data_given_ticker_obj,
                           start_date,
                           end_date)
 
