@@ -3,7 +3,6 @@
 
 import pandas as pd
 import yfinance as yf
-from datetime import datetime
 from .fin_data_excpetion import FinDataFetchExcpetion, FinDataPeriodFetchException
 
 
