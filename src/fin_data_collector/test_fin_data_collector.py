@@ -2,6 +2,7 @@
 
 import unittest
 import yfinance as yf
+import pandas as pd
 from .fin_data_collector import FinDataCollector
 from .fin_data_excpetion import FinDataFetchExcpetion, FinDataPeriodFetchException
 
@@ -57,7 +58,7 @@ class TestFinDataCollector(unittest.TestCase):
         self.fin_data_collect_obj.fetch_ticker_obj('FB')
         data_ = self.fin_data_collect_obj.get_historical_data_given_ticker_obj(start_date,
                                                                                end_date)
-        self.assertIsNotNone(data_)
+        self.assertIsInstance(data_, pd.DataFrame)
 
 
 
