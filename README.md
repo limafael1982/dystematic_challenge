@@ -1,1 +1,2 @@
-# dystematic_challenge
+# stocks operations
+(descriptio will soon be written)
